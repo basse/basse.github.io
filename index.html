@@ -26,7 +26,7 @@
             const invite = urlParams.get('invite')
             const platform = getPlatform()
             document.getElementById("storeLink").href = (platform.android ? gpLink : asLink)
-            document.getElementById("appLink").href = "battlelands://inviteFriend/" + invite
+            document.getElementById("appLink").href = "blr://inviteFriend/" + invite
         }
 
         function getPlatform() {
