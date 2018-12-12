@@ -17,10 +17,34 @@
 
 </head>
 <body>
+    <script type="text/javascript">
+        const asLink = "https://itunes.apple.com/app/id1296181302?mt=8"
+        const gpLink = "https://play.google.com/store/apps/details?id=com.futureplay.battleground"
+
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const invite = urlParams.get('invite')
+            const platform = getPlatform()
+            document.getElementById("storeLink").href = (platform.android ? gpLink : asLink)
+            document.getElementById("appLink").href = "battlelands://inviteFriend/" + invite
+        }
+
+        function getPlatform() {
+            var ua = navigator.userAgent
+            return {
+                ios: navigator.userAgent.match(/iPhone|iPad|iPod/i) ? true : false,
+                android: navigator.userAgent.match(/Android/i) ? true : false
+            }
+        }
+    </script>
     <div id="article">
-    <h1>BLR</h1>
     <div>
-        <p>LINK</p>
+        <p>
+            <a id="storeLink" href="">Install Battlelands Royale</a>
+        </p>
+        <p>
+            <a id="appLink" href="">I already have Battlelands Royale installed</a>
+        </p>
     </div>
     </div>
 </body>
