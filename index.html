@@ -23,7 +23,7 @@
 
         window.onload = function() {
             const urlParams = new URLSearchParams(window.location.search);
-            const invite = urlParams.get('invite')
+            const invite = urlParams.get('i')
             const platform = getPlatform()
             document.getElementById("storeLink").href = (platform.android ? gpLink : asLink)
             document.getElementById("appLink").href = "blr://inviteFriend/" + invite
